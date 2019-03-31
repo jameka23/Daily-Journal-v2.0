@@ -60,6 +60,8 @@ const buildFieldsetElement = (elm, elmType, elemAttribute, elemTextContent) => {
             const happyRadioButton = document.createElement("input");
             happyRadioButton.type = elemAttribute;
             happyRadioButton.setAttribute("id", "happyMood");
+            happyRadioButton.setAttribute("value", "happyMood");
+            happyRadioButton.name = "mood";
             fieldsetElement.appendChild(happyRadioButton);
             fieldsetElement.appendChild(happyLabel);
 
@@ -70,6 +72,8 @@ const buildFieldsetElement = (elm, elmType, elemAttribute, elemTextContent) => {
             const sadRadioButton = document.createElement("input");
             sadRadioButton.type = elemAttribute;
             sadRadioButton.setAttribute("id", "sadMood");
+            sadRadioButton.setAttribute("value", "sadMood");
+            sadRadioButton.name = "mood";
             fieldsetElement.appendChild(sadRadioButton);
             fieldsetElement.appendChild(sadLabel);
 
@@ -79,6 +83,8 @@ const buildFieldsetElement = (elm, elmType, elemAttribute, elemTextContent) => {
             const angryRadioButton = document.createElement("input");
             angryRadioButton.type = elemAttribute;
             angryRadioButton.setAttribute("id", "angryMood");
+            angryRadioButton.setAttribute("value", "angryMood");
+            angryRadioButton.name = "mood";
             fieldsetElement.appendChild(angryRadioButton);
             fieldsetElement.appendChild(angryLabel);
 
@@ -88,6 +94,8 @@ const buildFieldsetElement = (elm, elmType, elemAttribute, elemTextContent) => {
             const frustratedRadioButton = document.createElement("input");
             frustratedRadioButton.type = elemAttribute;
             frustratedRadioButton.setAttribute("id", "frustratedMood");
+            frustratedRadioButton.setAttribute("value", "frustratedMood");
+            frustratedRadioButton.name = "mood";
             fieldsetElement.appendChild(frustratedRadioButton);
             fieldsetElement.appendChild(frustratedLabel);
             break;
@@ -150,3 +158,8 @@ const buildMainHTML = () => {
 }
 
 
+const clearElements = (element) => {
+    while(element.firstChild){
+        element.removeChild(element.firstChild);
+    }
+}

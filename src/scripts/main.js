@@ -10,6 +10,14 @@ const saveButton = document.querySelector("#save--button");
 saveButton.addEventListener("click", saveButtonHandler);
 
 // step 4. will call the handler function for each time the radio buttons are pressed
-
 const happyRadioEvent = document.querySelector("#happyMood");
-happyRadioEvent.addEventListener("")
+happyRadioEvent.addEventListener("click", filterMoodHandler);
+
+const sadRadioEvent = document.querySelector("#sadMood");
+sadRadioEvent.addEventListener("click", filterMoodHandler);
+
+const angryRadioEvent = document.querySelector("#angryMood");
+angryRadioEvent.addEventListener("click", filterMoodHandler);
+
+const frustratedRadioEvent = document.querySelector("#frustratedMood");
+frustratedRadioEvent.addEventListener("click", filterMoodHandler);
