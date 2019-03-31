@@ -1,0 +1,60 @@
+{
+  "entries": [
+    {
+      "id": 1,
+      "entry_date": "March 1, 2019",
+      "concepts": "Men and Women in Tech",
+      "entry": "Today I learned that men in fact do not know what they are talking about. ",
+      "mood": "Happy"
+    },
+    {
+      "id": 2,
+      "entry_date": "February 28, 2019",
+      "concepts": "Functions and Objects",
+      "entry": "I learned more about JavaScript and their functions. I had recently looked at functions and things change all the time. We also talked about the big arrow functions. I'm feeling more comfortable with it. ",
+      "mood": "Happy"
+    },
+    {
+      "id": 3,
+      "entry_date": "February 27, 2019",
+      "concepts": "Presentations",
+      "entry": "We presented our projects today and that was fun yet a disaster because we didn't finish our project.",
+      "mood": "Sad"
+    },
+    {
+      "id": 4,
+      "entry_date": "February 26, 2019",
+      "concepts": "Manipulating the DOm",
+      "entry": "Today we learned about manipulating the DOM and how we would be making a lot of home page with javascript instead of html.",
+      "mood": "Sad"
+    },
+    {
+      "entry_date": "dlsfja",
+      "concepts": "sfjaif",
+      "entry": "2019-03-21",
+      "mood": "sad",
+      "id": 5
+    },
+    {
+      "entry_date": "fafdsfasf",
+      "concepts": "fasfafsdfsdfa",
+      "entry": "2019-03-14",
+      "mood": "happy",
+      "id": 6
+    },
+    {
+      "entry_date": "testing append",
+      "concepts": "hope it works",
+      "entry": "2019-03-01",
+      "mood": "happy",
+      "id": 7
+    },
+    {
+      "entry_date": "grunt",
+      "concepts": "It's a doozy",
+      "entry": "2019-03-06",
+      "mood": "happy",
+      "id": 8
+    }
+  ]
+}
