@@ -151,6 +151,8 @@ const buildMainHTML = () => {
     
     const hr = document.createElement("hr");
     mainDivContainer.appendChild(hr);
+    let br = document.createElement("br");
+    mainArticleContainer.appendChild(br);
 
     const filterMoodContainer = document.querySelector("#filter--mood");
     const filterFieldset = buildFieldsetElement("legend", "filterMood", "radio", "Filter Journal Entries by Mood");
@@ -163,4 +165,96 @@ const clearElements = (element) => {
     while(element.firstChild){
         element.removeChild(element.firstChild);
     }
+}
+
+
+const buildElement = (elemType, elemValue, elemTextContent, elemId) => {
+    
+}
+
+
+const buildEditFormHtml = (updateObj) => {
+    // this function will create the form to edit 
+
+    const editFieldset = document.createElement("fieldset");
+    editFieldset.id =  `update-entry--${updateObj.id}`;
+    const editDocForm = document.createDocumentFragment();
+    const editLegend = document.createElement("legend");
+    editLegend.textContent = "Update Journal Entry";
+    editDocForm.appendChild(editLegend);
+    // editFieldset.appendChild(editLegend);
+
+    const conceptP = document.createElement("p");
+    const conceptsLabel = document.createElement("label");
+    conceptsLabel.textContent = "Concepts: ";
+    const editConcepts = document.createElement("input");
+    editConcepts.id = `edit-concepts--${updateObj.id}`;
+    editConcepts.setAttribute("value", `${updateObj.concepts}`);
+    editDocForm.appendChild(conceptP);
+    editDocForm.appendChild(conceptsLabel);
+    editDocForm.appendChild(editConcepts);
+
+    const dateP = document.createElement("p");
+    const dateLabel = document.createElement("label");
+    dateLabel.textContent = "Date: ";
+    const editDate = document.createElement("input");
+    editDate.id = `edit-date--${updateObj.id}`;
+    editDate.setAttribute("value", `${updateObj.entry_date}`);
+    editDocForm.appendChild(dateP);
+    editDocForm.appendChild(dateLabel);
+    editDocForm.appendChild(editDate);
+
+    const entryP = document.createElement("p");
+    const entryLabel = document.createElement("label");
+    entryLabel.textContent = "Entry: ";
+    const editEntry = document.createElement("input");
+    editEntry.id = `edit-entry--${updateObj.id}`;
+    editEntry.setAttribute("value", `${updateObj.entry}`);
+    editDocForm.appendChild(entryP);
+    editDocForm.appendChild(entryLabel);
+    editDocForm.appendChild(editEntry);
+
+    const moodP = document.createElement("p");
+    const moodLabel = document.createElement("label");
+    moodLabel.textContent = "Mood: ";
+    const editMood = document.createElement("select");
+    editMood.id = `edit-mood--${updateObj.id}`;
+    const option1 = document.createElement("option");
+    option1.value = "happy";
+    option1.name = "mood";
+    option1.textContent = "Happy";
+    const option2 = document.createElement("option");
+    option2.value = "sad";
+    option2.name = "mood";
+    option2.textContent = "Sad";
+    const option3 = document.createElement("option");
+    option3.value = "angry";
+    option3.name = "mood";
+    option3.textContent = "Angry";
+    const option4 = document.createElement("option");
+    option4.value = "frustrated";
+    option4.name = "mood";
+    option4.textContent = "Frustrated";
+
+    editMood.appendChild(option1);
+    editMood.appendChild(option2);
+    editMood.appendChild(option3);
+    editMood.appendChild(option4);
+
+    const saveP = document.createElement("p");
+    saveP.id =  `update-entry--${updateObj.id}`;
+    const updateButton = document.createElement("button");
+    updateButton.id = `update-entry--${updateObj.id}`;
+    updateButton.textContent = "Update Entry"
+    updateButton.addEventListener("click", handleUpdate);
+    saveP.appendChild(updateButton);
+
+    editDocForm.appendChild(moodP);
+    editDocForm.appendChild(moodLabel);
+    editDocForm.appendChild(editMood);
+    editDocForm.appendChild(saveP);
+
+    editFieldset.appendChild(editDocForm);
+
+    return editFieldset;
 }
