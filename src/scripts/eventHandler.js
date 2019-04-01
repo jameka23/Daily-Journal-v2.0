@@ -54,11 +54,11 @@ const handleDelete = () => {
 }
 
 const handleEdit = () => {
-    // this function will update the journal entry in question
+    // this function will populate the entry in question 
     entryId = event.target.parentNode.id.split("--")[1];
     console.log(entryId);
 
-    const editFormArticle = document.querySelector(`#entry--log-${entryId}`);
+    const editFormArticle = document.querySelector(`#entry-log--${entryId}`);
     console.log(editFormArticle);
     // get that particular object
     API.getEntry(entryId).then(entryToEdit => {
@@ -67,4 +67,24 @@ const handleEdit = () => {
         editFormArticle.appendChild(editEntry);
     });
     // API.updateEntry(entryId, updatedObj).then(API.getJournalEntries).then(functionThatRendersData);
+}
+
+const handleUpdate = () => {
+    // this function will update the information in question
+    const entryId = event.target.id.split("--")[1];
+    // console.log(event.target);
+    console.log(entryId);
+
+    const updatedEntry = document.querySelector(`#edit-entry--${entryId}`).value;
+    const updatedConcept = document.querySelector(`#edit-concepts--${entryId}`).value;
+    const updatedDate = document.querySelector(`#edit-date--${entryId}`).value;
+    const updatedMood = document.querySelector(`#edit-mood--${entryId}`);
+    const mood = updatedMood.options[updatedMood.selectedIndex].value;
+
+    // console.log(updatedEntry,updatedConcept, updatedDate, mood);
+
+    let updatedJournalEntry = newJournalEntry(updatedConcept,updatedEntry,updatedDate, mood);
+
+    clearElements(mainArticleContainer);
+    API.putEntry(entryId, updatedJournalEntry).then(API.getJournalEntries).then(functionThatRendersData);
 }

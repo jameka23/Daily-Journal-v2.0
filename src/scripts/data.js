@@ -23,7 +23,7 @@ const API = {
         })
         .then(clearElements(mainArticleContainer));
     },
-    updateEntry (entryId, updateObj) {
+    putEntry (entryId, updateObj) {
         return fetch(`http://localhost:8088/entries/${entryId}`,{
             method: "PUT",
             headers: {
