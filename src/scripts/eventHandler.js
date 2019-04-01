@@ -17,6 +17,7 @@ const saveButtonHandler = () => {
     // save the 'entry' to the api, THEN call to GET the entries, THEN append to the DOM
     API.saveJournalEntry(entry).then(API.getJournalEntries).then(functionThatRendersData);
 
+
 }
 
 
@@ -42,17 +43,16 @@ const filterMoodHandler = () => {
             API.getMoodEntries("frustrated").then(functionThatRendersData);
             break;
     }
-    // if(event.target.value === "happyMood"){
-    //     clearElements(mainArticleContainer);
-    //     API.getMoodEntries("happy").then(functionThatRendersData);
-    // }else if(event.target.value === "sadMood"){
-    //     clearElements(mainArticleContainer);
-    //     API.getMoodEntries("sad").then(functionThatRendersData);
-    // }else if(event.target.value === "angryMood"){
-    //     clearElements(mainArticleContainer);
-    //     API.getMoodEntries("angry").then(functionThatRendersData);  
-    // }else if(event.target.value === "frustratedMood"){
-    //     clearElements(mainArticleContainer);
-    //     API.getMoodEntries("frustrated").then(functionThatRendersData); 
-    // }
+}
+
+const handleDelete = () => {
+    // this is the delete handler function
+    entryId = event.target.parentNode.id.split("--")[1];
+    console.log(entryId);
+
+    API.deleteEntry(entryId).then(API.getJournalEntries).then(functionThatRendersData);
+}
+
+const handleEdit = () => {
+    console.log(event.target.parentNode.id);
 }

@@ -29,39 +29,18 @@
       "mood": "sad"
     },
     {
-      "entry_date": "dlsfja",
-      "concepts": "sfjaif",
-      "entry": "2019-03-21",
-      "mood": "sad",
+      "entry_date": "2019-03-01",
+      "concepts": "Grunt",
+      "entry": "Today we learned about the automation using, grunt. At first it was daunting but after the installation, it really is a helpful tool. We are able to run both http-server and json-server. ",
+      "mood": "frustrated",
       "id": 5
     },
     {
-      "entry_date": "fafdsfasf",
-      "concepts": "fasfafsdfsdfa",
-      "entry": "2019-03-14",
+      "entry_date": "2019-03-05",
+      "concepts": "fakjfadf",
+      "entry": "dfjhafasdfaldfj;adj",
       "mood": "happy",
       "id": 6
-    },
-    {
-      "entry_date": "testing append",
-      "concepts": "hope it works",
-      "entry": "2019-03-01",
-      "mood": "happy",
-      "id": 7
-    },
-    {
-      "entry_date": "grunt",
-      "concepts": "It's a doozy",
-      "entry": "2019-03-06",
-      "mood": "angry",
-      "id": 8
-    },
-    {
-      "entry_date": "mike check",
-      "concepts": "one two one two",
-      "entry": "2019-03-04",
-      "mood": "frustrated",
-      "id": 9
     }
   ]
 }
