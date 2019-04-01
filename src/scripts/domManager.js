@@ -121,6 +121,7 @@ const buildFieldsetElement = (elm, elmType, elemAttribute, elemTextContent) => {
 
 const buildMainHTML = () => {
     // this function will build the journal form for entry
+    
     const journalHeader = document.createElement("h1");
     journalHeader.textContent = "DailyJournal";
 

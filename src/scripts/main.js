@@ -21,3 +21,4 @@ angryRadioEvent.addEventListener("click", filterMoodHandler);
 
 const frustratedRadioEvent = document.querySelector("#frustratedMood");
 frustratedRadioEvent.addEventListener("click", filterMoodHandler);
+

@@ -16,5 +16,11 @@ const API = {
     getMoodEntries (mood) { // returns an array of objects
         return fetch(`http://localhost:8088/entries?mood=${mood}`)
         .then(response => response.json())
+    },
+    deleteEntry (entryId) {
+        return fetch(`http://localhost:8088/entries/${entryId}`,{
+            method: "DELETE"
+        })
+        .then(clearElements(mainArticleContainer));
     }
 }
