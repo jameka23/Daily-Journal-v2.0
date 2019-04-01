@@ -164,3 +164,71 @@ const clearElements = (element) => {
         element.removeChild(element.firstChild);
     }
 }
+
+
+const buildElement = (elemType, elemValue, elemTextContent, elemId) => {
+    
+}
+
+
+const buildEditFormHtml = (updateObj) => {
+    // this function will create the form to edit 
+
+    const editFieldset = document.createElement("fieldset");
+    const editDocForm = document.createDocumentFragment();
+    const editLegend = document.createElement("legend");
+    editLegend.textContent = "Update Journal Entry";
+    editDocForm.appendChild(editLegend);
+    // editFieldset.appendChild(editLegend);
+
+    const conceptsLabel = document.createElement("label");
+    conceptsLabel.textContent = "Concepts: ";
+    const editConcepts = document.createElement("input");
+    editConcepts.id = "edit-concepts";
+    editConcepts.setAttribute("value", `${updateObj.concepts}`);
+    editDocForm.appendChild(conceptsLabel);
+    editDocForm.appendChild(editConcepts);
+
+    const dateLabel = document.createElement("label");
+    dateLabel.textContent = "Date: ";
+    const editDate = document.createElement("input");
+    editDate.id = "edit-date";
+    editDate.setAttribute("value", `${updateObj.entry_date}`);
+    editDocForm.appendChild(dateLabel);
+    editDocForm.appendChild(editDate);
+
+    const entryLabel = document.createElement("label");
+    entryLabel.textContent = "Entry: ";
+    const editEntry = document.createElement("input");
+    editEntry.id = "edit-entry";
+    editEntry.setAttribute("value", `${update.entry}`);
+    editDocForm.appendChild(entryLabel);
+    editDocForm.appendChild(editEntry);
+
+    const moodLabel = document.createElement("label");
+    moodLabel.textContent = "Mood: ";
+
+    const editMood = document.createElement("select");
+    const option1 = document.createElement("option");
+    option1.value = "happy";
+    option1.textContent = "Happy";
+    const option2 = document.createElement("option");
+    option2.value = "sad";
+    option2.textContent = "Sad";
+    const option3 = document.createElement("option");
+    option3.value = "angry";
+    option3.textContent = "Angry";
+    const option4 = document.createElement("option");
+    option4.value = "frustrated";
+    option4.textContent = "Frustrated";
+
+    editMood.appendChild(option1);
+    editMood.appendChild(option2);
+    editMood.appendChild(option3);
+    editMood.appendChild(option4);
+
+    editDocForm.appendChild(moodLabel);
+    editDocForm.appendChild(editMood);
+
+    editFieldset.appendChild(editDocForm);
+}

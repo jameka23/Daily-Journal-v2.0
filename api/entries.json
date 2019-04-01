@@ -41,6 +41,20 @@
       "entry": "dfjhafasdfaldfj;adj",
       "mood": "happy",
       "id": 6
+    },
+    {
+      "entry_date": "2019-04-03",
+      "concepts": "checking things out",
+      "entry": "Hello",
+      "mood": "angry",
+      "id": 7
+    },
+    {
+      "entry_date": "2019-04-01",
+      "concepts": "Sophomore Status",
+      "entry": "Thank God we are no longer the newbies and there is a new cohort out there. ",
+      "mood": "happy",
+      "id": 8
     }
   ]
 }

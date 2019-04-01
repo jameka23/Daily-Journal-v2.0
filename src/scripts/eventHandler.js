@@ -54,5 +54,17 @@ const handleDelete = () => {
 }
 
 const handleEdit = () => {
-    console.log(event.target.parentNode.id);
+    // this function will update the journal entry in question
+    entryId = event.target.parentNode.id.split("--")[1];
+    console.log(entryId);
+
+    const editFormArticle = document.querySelector(`#entry--log-${entryId}`);
+    console.log(editFormArticle);
+    // get that particular object
+    API.getEntry(entryId).then(entryToEdit => {
+        clearElements(editFormArticle);
+        const editEntry = buildEditFormHtml(entryToEdit);
+        editFormArticle.appendChild(editEntry);
+    });
+    // API.updateEntry(entryId, updatedObj).then(API.getJournalEntries).then(functionThatRendersData);
 }
