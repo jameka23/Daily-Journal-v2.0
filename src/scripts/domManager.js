@@ -143,21 +143,44 @@ const buildMainHTML = () => {
     const saveButton = document.createElement("button");
     saveButton.id = "save--button";
     saveButton.textContent = "Save Journal Entry";
+    let br = document.createElement("br");
+
     
     mainContainerDocFrag.appendChild(saveButton);
+    mainArticleContainer.appendChild(br);
 
     mainFormContainer.appendChild(mainContainerDocFrag);
     mainDivContainer.appendChild(mainFormContainer);
     
     const hr = document.createElement("hr");
     mainDivContainer.appendChild(hr);
-    let br = document.createElement("br");
+
+    mainArticleContainer.appendChild(br);
     mainArticleContainer.appendChild(br);
 
+
+    // the filter mood container 
+
+    // const mainLegendContainer = document.querySelector("#filter--and-search");
     const filterMoodContainer = document.querySelector("#filter--mood");
     const filterFieldset = buildFieldsetElement("legend", "filterMood", "radio", "Filter Journal Entries by Mood");
+
+    // the search container 
+    const searchEntries = document.querySelector("#search--entries");
+    const searchFieldset = document.createElement("fieldset");
+    const searchLegend = document.createElement("legend");
+    searchLegend.textContent = "Search Journal Entries";
+    searchFieldset.appendChild(searchLegend);
+
+    const searchInput = document.createElement("input");
+    searchInput.size = 50;
+    searchInput.placeholder = "Enter search term";
+    searchInput.id = "searched--item";
+    searchFieldset.appendChild(searchInput);
+    searchEntries.appendChild(searchFieldset);
     filterMoodContainer.appendChild(filterFieldset);
 
+    searchInput.addEventListener("keypress", handleSearch);
 }
 
 

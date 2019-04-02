@@ -1,0 +1,8 @@
+#filter--and-search {
+    display: flex;
+    justify-content: space-between;
+}
+
+#filter--mood, #search--entries {
+    max-width: 40%;
+}
