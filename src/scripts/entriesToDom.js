@@ -14,3 +14,20 @@ const functionThatRendersData = (parsedEntry) => {
     articleDOM.appendChild(articleDomFrag);
 
 }
+
+const renderSearchData = (obj) => {
+    //     <h3>${obj.concepts}</h3>
+    //     <div>${obj.entry}</div>
+    //     <div>${obj.entry_date}</div>
+    const header = document.createElement("h2");
+    const para1 = document.createElement("p");
+    const para2 = document.createElement("p");
+
+    header.textContent = obj.concepts;
+    para1.textContent = obj.entry;
+    para2.textContent = obj.entry_date;
+
+    mainArticleContainer.appendChild(header);
+    mainArticleContainer.appendChild(para1);
+    mainArticleContainer.appendChild(para2);
+}
