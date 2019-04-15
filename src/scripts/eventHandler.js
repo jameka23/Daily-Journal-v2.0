@@ -100,13 +100,13 @@ const handleSearch = () => {
             entryArray.forEach(journalObj => {
                 const journalArrayValues = Object.values(journalObj);
                 // console.log(journalArrayValues);
-                const matchSearch = journalArrayValues.filter(value => {
+                const matchSearch = journalArrayValues.find(value => {
                     // console.log(typeof(value));
                     let lowerCaseValue = value.toString().toLowerCase();
                     return lowerCaseValue.includes(searchTerm);
                 })
                 // console.log("what is in the array: ",matchSearch);
-                if(matchSearch.length > 1){
+                if(matchSearch !== undefined){
                     renderSearchData(journalObj);
                 }
             })
