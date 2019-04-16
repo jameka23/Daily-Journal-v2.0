@@ -1,3 +1,5 @@
+// this is the api component
+
 const API = {
     getJournalEntries () { // returns all the entries as an array of objects
         return fetch("http://localhost:8088/entries")
@@ -37,3 +39,5 @@ const API = {
         .then(response => response.json())
     }
 }
+
+export default API
