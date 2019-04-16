@@ -70,7 +70,7 @@ const domManager = {
                 happyRadioButton.setAttribute("id", "happyMood");
                 happyRadioButton.setAttribute("value", "happyMood");
                 happyRadioButton.name = "mood";
-                happyRadioEvent.addEventListener("click", handlers.filterMoodHandler);
+                happyRadioButton.addEventListener("click", handlers.filterMoodHandler);
                 fieldsetElement.appendChild(happyRadioButton);
                 fieldsetElement.appendChild(happyLabel);
     
@@ -83,7 +83,7 @@ const domManager = {
                 sadRadioButton.setAttribute("id", "sadMood");
                 sadRadioButton.setAttribute("value", "sadMood");
                 sadRadioButton.name = "mood";
-                sadRadioEvent.addEventListener("click", handlers.filterMoodHandler);
+                sadRadioButton.addEventListener("click", handlers.filterMoodHandler);
                 fieldsetElement.appendChild(sadRadioButton);
                 fieldsetElement.appendChild(sadLabel);
     
@@ -95,7 +95,7 @@ const domManager = {
                 angryRadioButton.setAttribute("id", "angryMood");
                 angryRadioButton.setAttribute("value", "angryMood");
                 angryRadioButton.name = "mood";
-                angryRadioEvent.addEventListener("click", handlers.filterMoodHandler);
+                angryRadioButton.addEventListener("click", handlers.filterMoodHandler);
                 fieldsetElement.appendChild(angryRadioButton);
                 fieldsetElement.appendChild(angryLabel);
     
@@ -107,7 +107,7 @@ const domManager = {
                 frustratedRadioButton.setAttribute("id", "frustratedMood");
                 frustratedRadioButton.setAttribute("value", "frustratedMood");
                 frustratedRadioButton.name = "mood";
-                frustratedRadioEvent.addEventListener("click", handlers.filterMoodHandler);
+                frustratedRadioButton.addEventListener("click", handlers.filterMoodHandler);
                 fieldsetElement.appendChild(frustratedRadioButton);
                 fieldsetElement.appendChild(frustratedLabel);
                 break;
@@ -138,16 +138,16 @@ const domManager = {
         mainDivContainer.appendChild(journalHeader);
         
         const mainFormContainer = document.createElement("article");
-        const dateFieldset = buildFieldsetElement(undefined, "date", "journalDate", "Date of Entry ");
+        const dateFieldset = domManager.buildFieldsetElement(undefined, "date", "journalDate", "Date of Entry ");
         mainContainerDocFrag.appendChild(dateFieldset);
     
-        const conceptFieldset = buildFieldsetElement(undefined, "text", "concepts", "Concepts covered ");
+        const conceptFieldset = domManager.buildFieldsetElement(undefined, "text", "concepts", "Concepts covered ");
         mainContainerDocFrag.appendChild(conceptFieldset);
     
-        const entryFieldset = buildFieldsetElement("textarea", undefined, "journalEntry", "Journal Entry ");
+        const entryFieldset = domManager.buildFieldsetElement("textarea", undefined, "journalEntry", "Journal Entry ");
         mainContainerDocFrag.appendChild(entryFieldset);
     
-        const selectFieldset = buildFieldsetElement("select", undefined, "mood", "Mood for the day ");
+        const selectFieldset = domManager.buildFieldsetElement("select", undefined, "mood", "Mood for the day ");
         mainContainerDocFrag.appendChild(selectFieldset);
     
         const saveButton = document.createElement("button");
@@ -174,7 +174,7 @@ const domManager = {
     
         // const mainLegendContainer = document.querySelector("#filter--and-search");
         const filterMoodContainer = document.querySelector("#filter--mood");
-        const filterFieldset = buildFieldsetElement("legend", "filterMood", "radio", "Filter Journal Entries by Mood");
+        const filterFieldset = domManager.buildFieldsetElement("legend", "filterMood", "radio", "Filter Journal Entries by Mood");
     
         // the search container 
         const searchEntries = document.querySelector("#search--entries");
